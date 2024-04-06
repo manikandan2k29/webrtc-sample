@@ -1,8 +1,14 @@
-body {
-  font-family: sans-serif;
-}
-
 video {
+  filter: drop-shadow(8px 8px 10px gray);
   max-width: 100%;
   width: 320px;
 }
+
+/* video {
+    filter: drop-shadow(8px 8px 10px gray);
+    filter: brightness(1);
+    filter: grayscale(100%);
+    max-width: 100%;
+    width: 320px;
+  } */
+
