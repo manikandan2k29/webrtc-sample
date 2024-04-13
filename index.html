@@ -8,10 +8,16 @@
   </head>
   <body>
     <h1>Realtime communication</h1>
-    <video id="localVideo" autoplay playsinline></video>
-    <button onclick="turnOffMic()">Mute</button>
-    <button onclick="turnOffVideo()">On</button>
-    <script src="/js/main.js"></script>
+    <button onclick="generateSession()">Create Session</button>
+    <input type="text" id="connectionString">
+    <button onclick="answer()">Get Offer</button>
+    <input type="text" id="connectionStringLocal">
+    <button onclick="setRemote()">Get Answer</button>
+    <input type="text" name="message" id="message">
+    <button type="submit" onclick="send()">send message</button>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="/js/client.js"></script>
   </body>
 
 </html>
+
