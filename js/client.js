@@ -1,58 +1,7 @@
-// let localStream;
-// let remoteStream;
-
-// const localVideo = document.getElementById("localVideo");
-// const remoteVideo = document.getElementById("remoteVideo");
-
-// let isMicMute = false;
-// let isVideoOn = false;
 
 let localPeerConnection;
 let remotePeerConnection;
 
-// navigator.mediaDevices
-//   .getUserMedia({ video: isVideoOn, audio: isMicMute })
-//   .then(getVideo)
-//   .catch("Media Error");
-
-// function getVideo(mediaStream) {
-//   localStream = mediaStream;
-//   localVideo.srcObject = mediaStream;
-//   trace("Received local stream.");
-// }
-
-// function trace(text) {
-//   text = text.trim();
-//   const now = (window.performance.now() / 1000).toFixed(3);
-//   console.log(now, text);
-// }
-
-// function turnOffMic() {
-//   isMicMute = isMicMute ? false : true;
-//   navigator.mediaDevices
-//     .getUserMedia({ video: isVideoOn, audio: isMicMute })
-//     .then(getVideo)
-//     .catch("Media Error");
-// }
-
-// function turnOffVideo() {
-//   isVideoOn = !isVideoOn;
-//   if (isVideoOn) {
-//     navigator.mediaDevices
-//       .getUserMedia({ video: true, audio: isMicMute })
-//       .then(getVideo)
-//       .catch(function (error) {
-//         console.error("Error starting video stream: ", error);
-//       });
-//   } else {
-//     if (localStream && localStream.getVideoTracks().length > 0) {
-//       localStream.getVideoTracks()[0].stop();
-//       console.log("Video turned off");
-//     } else {
-//       console.error("No video tracks found in the stream.");
-//     }
-//   }
-// }
 
 function generateSession() {
   localPeerConnection = new RTCPeerConnection();
