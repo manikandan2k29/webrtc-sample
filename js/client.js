@@ -29,6 +29,13 @@ function generateSession() {
     localPeerConnection.addTrack(track, localStream);
 });
 
+localPeerConnection.addEventListener('track', async (event) => {
+  const [remoteStream] = event.streams;
+  remoteVideo.srcObject = remoteStream;
+  console.log("added remote video");
+
+});
+
   
   const sendChannel = localPeerConnection.createDataChannel("sendChannel");
 
@@ -53,6 +60,9 @@ function answer() {
   const offer = document.getElementById("connectionString").value;
   console.log(offer);
   remotePeerConnection = new RTCPeerConnection();
+  localStream.getTracks().forEach(track => {
+    remotePeerConnection.addTrack(track, localStream);
+});
   remotePeerConnection.onicecandidate = (e) => {
     console.log("New Candidate");
     document.getElementById("answer").innerText = JSON.stringify(remotePeerConnection.localDescription);
