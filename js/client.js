@@ -8,7 +8,7 @@ let remoteStream;
 
 navigator.mediaDevices
   .getUserMedia({
-    audio: false,
+    audio: true,
     video: true,
   })
   .then((stream) => {
