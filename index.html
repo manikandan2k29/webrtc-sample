@@ -9,12 +9,16 @@
   <body>
     <h1>Realtime communication</h1>
     <button onclick="generateSession()">Create Session</button>
+    <p id="offer"></p>
     <input type="text" id="connectionString">
     <button onclick="answer()">Get Offer</button>
+    <p id="answer"></p>
     <input type="text" id="connectionStringLocal">
     <button onclick="setRemote()">Get Answer</button>
     <input type="text" name="message" id="message">
     <button type="submit" onclick="send()">send message</button>
+    <video playsinline autoplay id="localVideo"></video>
+    <video playsinline autoplay id="remoteVideo"></video>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="/js/client.js"></script>
   </body>
